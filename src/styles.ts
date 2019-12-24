@@ -81,7 +81,6 @@ export const style = {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(4, 120px);
-    grid-template-rows: repeat(3, 1fr);
     grid-gap: 0.25rem;
     animation: ${swipeIn} 0.3s ease forwards;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);
