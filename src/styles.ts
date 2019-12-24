@@ -44,6 +44,21 @@ export const style = {
     box-shadow: none;
     position: relative;
     label: container;
+
+    &:before {
+      border-style: solid;
+      border-width: 0.15em 0.15em 0 0;
+      content: "";
+      display: inline-block;
+      height: 0.45em;
+      position: absolute;
+      vertical-align: top;
+      width: 0.45em;
+      right: 0.7rem;
+      top: 50%;
+      border-color: #cccccc;
+      transform: translateY(-50%) rotate(135deg);
+    }
   `,
   input: css`
     outline: none;
@@ -69,7 +84,7 @@ export const style = {
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 0.25rem;
     animation: ${swipeIn} 0.3s ease forwards;
-    box-shadow: 1px 1px 20px #e8e8e8;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);
     border: 1px solid #e4e4e4;
     &:after {
       content: "";
