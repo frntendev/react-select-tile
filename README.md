@@ -57,7 +57,6 @@ class App extends React.Component {
 
 Common props you may want to specify include:
 
-- `name` - generate an HTML input with this name, containing the current value
 - `onInputChange` - subscribe to change events
 - `options` - specify the options the user can select from
 - `placeholder` - change the text displayed when no option is selected
