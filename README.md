@@ -2,7 +2,7 @@
 
 The Select control for [React](https://reactjs.com).
 
-Check [here](https://sepehr1313.github.io/react-select-tile.html)
+Check demo [here](https://sepehr1313.github.io/react-select-tile.html)
 
 ![React Select Tile Demo](http://g.recordit.co/m36nzGszKE.gif)
 
