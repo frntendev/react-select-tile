@@ -2,6 +2,8 @@
 
 The Select control for [React](https://reactjs.com).
 
+Check [here](https://sepehr1313.github.io/react-select-tile.html)
+
 ![React Select Tile Demo](http://g.recordit.co/m36nzGszKE.gif)
 
 # Installation and usage
@@ -89,7 +91,7 @@ You can control the following props by providing values for them. If you don't, 
 - `value` / `onChange` - specify the current value of the control
 - `menuIsOpen` / `onMenuOpen` / `onMenuClose` - control whether the menu is open
 
-## Run Demo
+## Run Demo Locally
 
 `npm run demo`
 
