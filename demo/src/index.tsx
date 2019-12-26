@@ -41,9 +41,8 @@ class Example extends React.Component {
     selectedOption: ""
   };
   handleItemClick = selectedOption => {
-    this.setState(
-      { selectedOption: options.find(s => s.value === selectedOption)?.label },
-      () => console.log(`Option selected:`, this.state.selectedOption)
+    this.setState({ selectedOption }, () =>
+      console.log(`Option selected:`, this.state.selectedOption)
     );
   };
   render() {

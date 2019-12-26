@@ -15,6 +15,8 @@ export interface SelectProps {
     menuStyle?: CSSProperties;
     menuItemClassName?: string;
     menuItemStyle?: CSSProperties;
+    activeItemClassName?: string;
+    activeItemStyle?: CSSProperties;
     menuComponent?: ReactComponent;
     emptyComponent?: ReactComponent;
     menuItemComponent?: ReactComponent;
@@ -28,6 +30,8 @@ export interface SelectProps {
     onInputChange?(el: React.ChangeEvent<HTMLInputElement>): void;
     onMenuClose?: () => void;
     onMenuOpen?: () => void;
+    iconClassName?: string;
+    iconStyle?: CSSProperties;
 }
 export interface MenuProps {
     menuRef: string | ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement> | null | undefined;
@@ -62,5 +66,8 @@ export interface MenuItemProps {
     children: ReactNode;
     menuItemComponent?: ReactComponent;
     value?: string;
+    isActive?: Boolean;
+    activeItemClassName?: string;
+    activeItemStyle?: CSSProperties;
 }
 export {};

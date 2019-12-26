@@ -10,7 +10,8 @@ const Menu_1 = require("./Menu");
 const Input_1 = require("./Input");
 const MenuItem_1 = require("./MenuItem");
 const EmptyStatus_1 = require("./EmptyStatus");
-exports.Select = ({ value, onItemClick, onInputChange, onMenuClose, onMenuOpen, menuIsOpen = false, containerClassName, containerStyle, inputClassName, inputStyle, menuClassName, menuStyle, menuItemClassName, menuItemStyle, menuComponent, emptyComponent, menuItemComponent, openAnimationDelay = 300, menuItemColumns = 4, menuItemWidth = 120, menuPosition = "bottom", placeholder = "", options }) => {
+exports.Select = ({ value, onItemClick, onInputChange, onMenuClose, onMenuOpen, menuIsOpen = false, containerClassName, containerStyle, inputClassName, inputStyle, menuClassName, menuStyle, menuItemClassName, menuItemStyle, activeItemClassName, activeItemStyle, menuComponent, emptyComponent, menuItemComponent, openAnimationDelay = 300, menuItemColumns = 4, menuItemWidth = 120, menuPosition = "bottom", placeholder = "", options, iconClassName, iconStyle }) => {
+    var _a;
     const [showMenu, setShowMenu] = react_1.useState(menuIsOpen);
     const [showTransition, setShowTransition] = react_1.useState(false);
     const [offsetX, setOffsetX] = react_1.useState(0);
@@ -46,13 +47,18 @@ exports.Select = ({ value, onItemClick, onInputChange, onMenuClose, onMenuOpen, 
         }
     }, [showMenu]);
     const EmptyContent = emptyComponent;
+    const selectedItem = options.find(s => s.value === value);
     return (core_1.jsx("div", { css: styles_1.style.container, className: containerClassName, style: containerStyle },
+        core_1.jsx("span", { css: styles_1.style.icon, className: iconClassName, style: iconStyle }),
         core_1.jsx(GlobalStyles_1.GlobalStyles, null),
-        core_1.jsx(Input_1.Input, { inputStyle: inputStyle, onClick: () => setShowMenu(true), onFocus: () => setShowMenu(true), onChange: onInputChange, value: value, inputRef: inputRef, inputClassName: inputClassName, placeholder: placeholder }),
+        core_1.jsx(Input_1.Input, { inputStyle: inputStyle, onClick: () => setShowMenu(true), onFocus: () => setShowMenu(true), onChange: onInputChange, value: ((_a = selectedItem) === null || _a === void 0 ? void 0 : _a.label) || "", inputRef: inputRef, inputClassName: inputClassName, placeholder: placeholder }),
         showMenu && (core_1.jsx(Menu_1.Menu, { menuRef: menuRef, menuItemColumns: menuItemColumns, menuItemWidth: menuItemWidth, menuWidth: menuWidth, offsetX: offsetX, offsetY: offsetY, menuPosition: menuPosition, inputHeight: inputHeight, showTransition: showTransition, menuComponent: menuComponent, menuClassName: menuClassName, menuStyle: menuStyle },
             (!options || options.length === 0) &&
                 (EmptyContent ? core_1.jsx(EmptyContent, null) : core_1.jsx(EmptyStatus_1.EmptyStatus, null)),
             options &&
-                options.map(({ label, value }) => (core_1.jsx(MenuItem_1.MenuItem, { key: value, value: value, onClick: onItemClick, menuItemClassName: menuItemClassName, menuItemStyle: menuItemStyle, menuItemComponent: menuItemComponent }, label)))))));
+                options.map(({ label, value }) => {
+                    var _a;
+                    return (core_1.jsx(MenuItem_1.MenuItem, { key: value, value: value, isActive: value === ((_a = selectedItem) === null || _a === void 0 ? void 0 : _a.value), onClick: onItemClick, menuItemClassName: menuItemClassName, menuItemStyle: menuItemStyle, menuItemComponent: menuItemComponent, activeItemClassName: activeItemClassName, activeItemStyle: activeItemStyle }, label));
+                })))));
 };
 //# sourceMappingURL=index.js.map

@@ -33680,8 +33680,28 @@ exports.ClassNames = ClassNames;
 },{"@babel/runtime/helpers/inheritsLoose":"../../node_modules/@babel/runtime/helpers/inheritsLoose.js","react":"../../node_modules/react/index.js","@emotion/cache":"../../node_modules/@emotion/cache/dist/cache.browser.esm.js","@emotion/utils":"../../node_modules/@emotion/utils/dist/utils.browser.esm.js","@emotion/serialize":"../../node_modules/@emotion/serialize/dist/serialize.browser.esm.js","@emotion/sheet":"../../node_modules/@emotion/sheet/dist/sheet.browser.esm.js","@emotion/css":"../../node_modules/@emotion/css/dist/css.browser.esm.js"}],"../../src/styles.ts":[function(require,module,exports) {
 "use strict";
 
-function _templateObject6() {
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n    background: #9575cd;\n    label: menuItemActive;\n  "]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
   var data = _taggedTemplateLiteral(["\n    padding: 0.5rem;\n    background: #e6e6e6;\n    cursor: pointer;\n    transition: 0.2s all ease;\n    label: menuItem;\n\n    &:hover {\n      background: #9575cd;\n    }\n  "]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n    max-height: 200px;\n    overflow-y: scroll;\n    background: #f5f5f5;\n    z-index: 999;\n    padding: 1.25rem;\n    box-sizing: border-box;\n    display: grid;\n    grid-template-columns: repeat(4, 120px);\n    grid-gap: 0.25rem;\n    animation: ", " 0.3s ease forwards;\n    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);\n    border: 1px solid #e4e4e4;\n    &:after {\n      content: \"\";\n      display: block;\n      height: 1.25rem;\n      width: 100%;\n    }\n    label: menu;\n  "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -33691,7 +33711,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n    max-height: 200px;\n    overflow-y: scroll;\n    background: #f5f5f5;\n    z-index: 999;\n    padding: 1.25rem;\n    box-sizing: border-box;\n    display: grid;\n    grid-template-columns: repeat(4, 120px);\n    grid-gap: 0.25rem;\n    animation: ", " 0.3s ease forwards;\n    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);\n    border: 1px solid #e4e4e4;\n    &:after {\n      content: \"\";\n      display: block;\n      height: 1.25rem;\n      width: 100%;\n    }\n    label: menu;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    outline: none;\n    width: 100%;\n    height: 100%;\n    padding: 5px 10px;\n    border: 0;\n    cursor: pointer;\n    color: transparent;\n    text-shadow: 0 0 0 #000;\n    font-size: 1rem;\n    label: input;\n  "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -33701,7 +33721,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    outline: none;\n    width: 100%;\n    height: 100%;\n    padding: 5px 10px;\n    border: 0;\n    cursor: pointer;\n    color: transparent;\n    text-shadow: 0 0 0 #000;\n    font-size: 1rem;\n    label: input;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    border-style: solid;\n    border-width: 0.15em 0.15em 0 0;\n    content: \"\";\n    display: inline-block;\n    height: 0.45em;\n    position: absolute;\n    vertical-align: top;\n    width: 0.45em;\n    right: 0.7rem;\n    top: 50%;\n    border-color: #cccccc;\n    transform: translateY(-50%) rotate(135deg);\n    label: icon;\n  "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -33711,7 +33731,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex: 1;\n    min-height: 32px;\n    pointer-events: auto;\n    background: #fff;\n    cursor: default;\n    border-width: 1px;\n    border-style: solid;\n    border-color: #ccc;\n    z-index: 0;\n    box-sizing: border-box;\n    max-width: 100%;\n    box-shadow: none;\n    position: relative;\n    label: container;\n\n    &:before {\n      border-style: solid;\n      border-width: 0.15em 0.15em 0 0;\n      content: \"\";\n      display: inline-block;\n      height: 0.45em;\n      position: absolute;\n      vertical-align: top;\n      width: 0.45em;\n      right: 0.7rem;\n      top: 50%;\n      border-color: #cccccc;\n      transform: translateY(-50%) rotate(135deg);\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex: 1;\n    min-height: 32px;\n    pointer-events: auto;\n    background: #fff;\n    cursor: default;\n    border-width: 1px;\n    border-style: solid;\n    border-color: #ccc;\n    z-index: 0;\n    box-sizing: border-box;\n    max-width: 100%;\n    box-shadow: none;\n    position: relative;\n    z-index: 99;\n    label: container;\n  "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -33752,9 +33772,11 @@ exports.swipeIn = core_1.keyframes(_templateObject());
 exports.swipeOut = core_1.keyframes(_templateObject2());
 exports.style = {
   container: core_1.css(_templateObject3()),
-  input: core_1.css(_templateObject4()),
-  menu: core_1.css(_templateObject5(), exports.swipeIn),
-  menuItem: core_1.css(_templateObject6())
+  icon: core_1.css(_templateObject4()),
+  input: core_1.css(_templateObject5()),
+  menu: core_1.css(_templateObject6(), exports.swipeIn),
+  menuItem: core_1.css(_templateObject7()),
+  menuItemActive: core_1.css(_templateObject8())
 };
 },{"@emotion/core":"../../node_modules/@emotion/core/dist/core.browser.esm.js"}],"../../src/GlobalStyles.tsx":[function(require,module,exports) {
 "use strict";
@@ -33994,6 +34016,18 @@ exports.Input = function (_ref) {
 },{"@emotion/core":"../../node_modules/@emotion/core/dist/core.browser.esm.js","./styles":"../../src/styles.ts"}],"../../src/MenuItem.tsx":[function(require,module,exports) {
 "use strict";
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n        ", ";\n        ", "\n      "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -34010,16 +34044,20 @@ exports.MenuItem = function (_ref) {
       children = _ref.children,
       menuItemComponent = _ref.menuItemComponent,
       _ref$value = _ref.value,
-      value = _ref$value === void 0 ? "" : _ref$value;
+      value = _ref$value === void 0 ? "" : _ref$value,
+      isActive = _ref.isActive,
+      activeItemClassName = _ref.activeItemClassName,
+      activeItemStyle = _ref.activeItemStyle;
   var MenuItemContent = menuItemComponent;
+  var styles = Object.assign(Object.assign({}, menuItemStyle), isActive && activeItemStyle);
   return MenuItemContent ? core_1.jsx(MenuItemContent, null, children) : core_1.jsx("div", {
     onClick: function onClick() {
       return _onClick && _onClick(value);
     },
-    css: styles_1.style.menuItem,
-    className: menuItemClassName,
-    style: menuItemStyle
-  }, children);
+    css: core_1.css(_templateObject(), styles_1.style.menuItem, isActive && styles_1.style.menuItemActive),
+    className: "".concat(menuItemClassName).concat(isActive && " ".concat(activeItemClassName)),
+    style: styles
+  }, core_1.jsx("div", null, children));
 };
 },{"@emotion/core":"../../node_modules/@emotion/core/dist/core.browser.esm.js","./styles":"../../src/styles.ts"}],"../../node_modules/tslib/tslib.es6.js":[function(require,module,exports) {
 "use strict";
@@ -34509,6 +34547,8 @@ exports.Select = function (_ref) {
       menuStyle = _ref.menuStyle,
       menuItemClassName = _ref.menuItemClassName,
       menuItemStyle = _ref.menuItemStyle,
+      activeItemClassName = _ref.activeItemClassName,
+      activeItemStyle = _ref.activeItemStyle,
       menuComponent = _ref.menuComponent,
       emptyComponent = _ref.emptyComponent,
       menuItemComponent = _ref.menuItemComponent,
@@ -34522,7 +34562,11 @@ exports.Select = function (_ref) {
       menuPosition = _ref$menuPosition === void 0 ? "bottom" : _ref$menuPosition,
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === void 0 ? "" : _ref$placeholder,
-      options = _ref.options;
+      options = _ref.options,
+      iconClassName = _ref.iconClassName,
+      iconStyle = _ref.iconStyle;
+
+  var _a;
 
   var _react_1$useState = react_1.useState(menuIsOpen),
       _react_1$useState2 = _slicedToArray(_react_1$useState, 2),
@@ -34583,11 +34627,18 @@ exports.Select = function (_ref) {
     }
   }, [showMenu]);
   var EmptyContent = emptyComponent;
+  var selectedItem = options.find(function (s) {
+    return s.value === value;
+  });
   return core_1.jsx("div", {
     css: styles_1.style.container,
     className: containerClassName,
     style: containerStyle
-  }, core_1.jsx(GlobalStyles_1.GlobalStyles, null), core_1.jsx(Input_1.Input, {
+  }, core_1.jsx("span", {
+    css: styles_1.style.icon,
+    className: iconClassName,
+    style: iconStyle
+  }), core_1.jsx(GlobalStyles_1.GlobalStyles, null), core_1.jsx(Input_1.Input, {
     inputStyle: inputStyle,
     onClick: function onClick() {
       return setShowMenu(true);
@@ -34596,7 +34647,7 @@ exports.Select = function (_ref) {
       return setShowMenu(true);
     },
     onChange: onInputChange,
-    value: value,
+    value: ((_a = selectedItem) === null || _a === void 0 ? void 0 : _a.label) || "",
     inputRef: inputRef,
     inputClassName: inputClassName,
     placeholder: placeholder
@@ -34616,13 +34667,19 @@ exports.Select = function (_ref) {
   }, (!options || options.length === 0) && (EmptyContent ? core_1.jsx(EmptyContent, null) : core_1.jsx(EmptyStatus_1.EmptyStatus, null)), options && options.map(function (_ref2) {
     var label = _ref2.label,
         value = _ref2.value;
+
+    var _a;
+
     return core_1.jsx(MenuItem_1.MenuItem, {
       key: value,
       value: value,
+      isActive: value === ((_a = selectedItem) === null || _a === void 0 ? void 0 : _a.value),
       onClick: onItemClick,
       menuItemClassName: menuItemClassName,
       menuItemStyle: menuItemStyle,
-      menuItemComponent: menuItemComponent
+      menuItemComponent: menuItemComponent,
+      activeItemClassName: activeItemClassName,
+      activeItemStyle: activeItemStyle
     }, label);
   })));
 };
@@ -34742,12 +34799,8 @@ function (_React$Component) {
     };
 
     _this.handleItemClick = function (selectedOption) {
-      var _a;
-
       _this.setState({
-        selectedOption: (_a = options.find(function (s) {
-          return s.value === selectedOption;
-        })) === null || _a === void 0 ? void 0 : _a.label
+        selectedOption: selectedOption
       }, function () {
         return console.log("Option selected:", _this.state.selectedOption);
       });
@@ -34813,7 +34866,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62676" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63792" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

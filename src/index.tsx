@@ -30,6 +30,8 @@ export const Select = ({
   menuStyle,
   menuItemClassName,
   menuItemStyle,
+  activeItemClassName,
+  activeItemStyle,
   menuComponent,
   emptyComponent,
   menuItemComponent,
@@ -38,7 +40,9 @@ export const Select = ({
   menuItemWidth = 120,
   menuPosition = "bottom",
   placeholder = "",
-  options
+  options,
+  iconClassName,
+  iconStyle
 }: SelectProps) => {
   const [showMenu, setShowMenu] = useState<Boolean>(menuIsOpen);
   const [showTransition, setShowTransition] = useState<Boolean>(false);
@@ -75,6 +79,7 @@ export const Select = ({
   }, [showMenu]);
 
   const EmptyContent = emptyComponent;
+  const selectedItem = options.find(s => s.value === value);
 
   return (
     <div
@@ -82,6 +87,7 @@ export const Select = ({
       className={containerClassName}
       style={containerStyle}
     >
+      <span css={style.icon} className={iconClassName} style={iconStyle} />
       <GlobalStyles />
 
       <Input
@@ -89,7 +95,7 @@ export const Select = ({
         onClick={() => setShowMenu(true)}
         onFocus={() => setShowMenu(true)}
         onChange={onInputChange}
-        value={value}
+        value={selectedItem?.label || ""}
         inputRef={inputRef}
         inputClassName={inputClassName}
         placeholder={placeholder}
@@ -116,10 +122,13 @@ export const Select = ({
               <MenuItem
                 key={value}
                 value={value}
+                isActive={value === selectedItem?.value}
                 onClick={onItemClick}
                 menuItemClassName={menuItemClassName}
                 menuItemStyle={menuItemStyle}
                 menuItemComponent={menuItemComponent}
+                activeItemClassName={activeItemClassName}
+                activeItemStyle={activeItemStyle}
               >
                 {label}
               </MenuItem>

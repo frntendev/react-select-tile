@@ -42,22 +42,23 @@ exports.style = {
     max-width: 100%;
     box-shadow: none;
     position: relative;
+    z-index: 99;
     label: container;
-
-    &:before {
-      border-style: solid;
-      border-width: 0.15em 0.15em 0 0;
-      content: "";
-      display: inline-block;
-      height: 0.45em;
-      position: absolute;
-      vertical-align: top;
-      width: 0.45em;
-      right: 0.7rem;
-      top: 50%;
-      border-color: #cccccc;
-      transform: translateY(-50%) rotate(135deg);
-    }
+  `,
+    icon: core_1.css `
+    border-style: solid;
+    border-width: 0.15em 0.15em 0 0;
+    content: "";
+    display: inline-block;
+    height: 0.45em;
+    position: absolute;
+    vertical-align: top;
+    width: 0.45em;
+    right: 0.7rem;
+    top: 50%;
+    border-color: #cccccc;
+    transform: translateY(-50%) rotate(135deg);
+    label: icon;
   `,
     input: core_1.css `
     outline: none;
@@ -102,6 +103,10 @@ exports.style = {
     &:hover {
       background: #9575cd;
     }
+  `,
+    menuItemActive: core_1.css `
+    background: #9575cd;
+    label: menuItemActive;
   `
 };
 //# sourceMappingURL=styles.js.map

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/core";
+import { jsx, css } from "@emotion/core";
 import { style } from "./styles";
 import { MenuItemProps } from "./types";
 
@@ -9,20 +9,30 @@ export const MenuItem = ({
   menuItemStyle,
   children,
   menuItemComponent,
-  value = ""
+  value = "",
+  isActive,
+  activeItemClassName,
+  activeItemStyle
 }: MenuItemProps) => {
   const MenuItemContent = menuItemComponent;
+  const styles = {
+    ...menuItemStyle,
+    ...(isActive && activeItemStyle)
+  };
 
   return MenuItemContent ? (
     <MenuItemContent>{children}</MenuItemContent>
   ) : (
     <div
       onClick={() => onClick && onClick(value)}
-      css={style.menuItem}
-      className={menuItemClassName}
-      style={menuItemStyle}
+      css={css`
+        ${style.menuItem};
+        ${isActive && style.menuItemActive}
+      `}
+      className={`${menuItemClassName}${isActive && ` ${activeItemClassName}`}`}
+      style={styles}
     >
-      {children}
+      <div>{children}</div>
     </div>
   );
 };
