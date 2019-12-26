@@ -1,6 +1,6 @@
 {
   "name": "react-select-tile",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Yet another Select-Box based on react and emotion",
   "main": "dist/index.js",
   "scripts": {
