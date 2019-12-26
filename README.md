@@ -75,6 +75,10 @@ Common props you may want to specify include:
 - `menuStyle` - menu items container style
 - `menuItemClassName` - menu item class
 - `menuItemStyle` - menu item style
+- `activeItemClassName` - active menu item class
+- `activeItemStyle` - active menu item style
+- `iconClassName` - Chevron icon class
+- `iconStyle` - chevron icon style
 - `emptyComponent` - element to display when there are no options
 - `menuComponent` - element to display as menu items container
 - `menuItemComponent` - element to display as menu item,
