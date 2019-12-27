@@ -58,7 +58,12 @@ exports.Select = ({ value, onItemClick, onInputChange, onMenuClose, onMenuOpen, 
             options &&
                 options.map(({ label, value }) => {
                     var _a;
-                    return (core_1.jsx(MenuItem_1.MenuItem, { key: value, value: value, isActive: value === ((_a = selectedItem) === null || _a === void 0 ? void 0 : _a.value), onClick: onItemClick, menuItemClassName: menuItemClassName, menuItemStyle: menuItemStyle, menuItemComponent: menuItemComponent, activeItemClassName: activeItemClassName, activeItemStyle: activeItemStyle }, label));
+                    return (core_1.jsx(MenuItem_1.MenuItem, { key: value, value: value, isActive: value === ((_a = selectedItem) === null || _a === void 0 ? void 0 : _a.value), onClick: val => {
+                            delayedExpiration();
+                            if (onItemClick) {
+                                return onItemClick(val);
+                            }
+                        }, menuItemClassName: menuItemClassName, menuItemStyle: menuItemStyle, menuItemComponent: menuItemComponent, activeItemClassName: activeItemClassName, activeItemStyle: activeItemStyle }, label));
                 })))));
 };
 //# sourceMappingURL=index.js.map

@@ -123,7 +123,12 @@ export const Select = ({
                 key={value}
                 value={value}
                 isActive={value === selectedItem?.value}
-                onClick={onItemClick}
+                onClick={val => {
+                  delayedExpiration();
+                  if (onItemClick) {
+                    return onItemClick(val);
+                  }
+                }}
                 menuItemClassName={menuItemClassName}
                 menuItemStyle={menuItemStyle}
                 menuItemComponent={menuItemComponent}

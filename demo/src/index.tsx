@@ -36,28 +36,23 @@ const code = (...props) => `<Select placeholder="Please select..."
     value={this.state.value} ${props.join("\n\t")}
     options={${JSON.stringify(options, null, 2)}} />`;
 
-class Example extends React.Component {
-  state = {
-    selectedOption: ""
-  };
-  handleItemClick = selectedOption => {
-    this.setState({ selectedOption }, () =>
-      console.log(`Option selected:`, this.state.selectedOption)
-    );
-  };
-  render() {
-    const { selectedOption } = this.state;
+const Example = () => {
+  const [value, setValue] = React.useState("");
 
-    return (
-      <Select
-        placeholder="Please select ..."
-        value={selectedOption}
-        options={options}
-        onItemClick={this.handleItemClick}
-      />
-    );
-  }
-}
+  const handleItemClick = value => {
+    setValue(value);
+    console.log(`Option selected:`, value);
+  };
+
+  return (
+    <Select
+      placeholder="Please select ..."
+      value={value}
+      options={options}
+      onItemClick={handleItemClick}
+    />
+  );
+};
 
 render(
   <React.Fragment>

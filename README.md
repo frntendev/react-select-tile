@@ -32,27 +32,23 @@ const options = [
   { value: "vanilla", label: "Vanilla" }
 ];
 
-class App extends React.Component {
-  state = {
-    selectedItem: ""
-  };
-  handleItemClick = selectedItem => {
-    this.setState({ selectedItem }, () =>
-      console.log(`Selected item:`, this.state.selectedItem)
-    );
-  };
-  render() {
-    const { selectedItem } = this.state;
+const App = () => {
+  const [value, setValue] = React.useState("");
 
-    return (
-      <Select
-        value={selectedItem}
-        options={options}
-        onItemClick={this.handleItemClick}
-      />
-    );
-  }
-}
+  const handleItemClick = value => {
+    setValue(value);
+    console.log(`Option selected:`, value);
+  };
+
+  return (
+    <Select
+      placeholder="Please select ..."
+      value={value}
+      options={options}
+      onItemClick={handleItemClick}
+    />
+  );
+};
 ```
 
 ## Props
