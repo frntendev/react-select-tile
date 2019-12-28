@@ -34,8 +34,6 @@ export const Menu = ({
             : `bottom : calc(${window.innerHeight}px - ${offsetY}px + ${inputHeight}px + 5px)`};
         `}
       `}
-      className={menuClassName}
-      style={menuStyle}
     >
       {MenuContent ? (
         <MenuContent>{children}</MenuContent>
@@ -46,7 +44,7 @@ export const Menu = ({
             ${css`
               grid-template-columns: repeat(
                 ${menuItemColumns},
-                ${menuItemWidth}px
+                ${menuItemWidth}
               );
             `}
             ${showTransition &&
@@ -54,6 +52,8 @@ export const Menu = ({
                 animation: ${swipeOut} 0.3s ease forwards;
               `}
           `}
+          className={menuClassName}
+          style={menuStyle}
         >
           {children}
         </div>

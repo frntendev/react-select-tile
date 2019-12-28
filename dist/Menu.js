@@ -15,18 +15,18 @@ exports.Menu = ({ menuRef, menuItemColumns, menuItemWidth, menuWidth, offsetX, o
             ? `top: calc(${offsetY}px + 5px)`
             : `bottom : calc(${window.innerHeight}px - ${offsetY}px + ${inputHeight}px + 5px)`};
         `}
-      `, className: menuClassName, style: menuStyle }, MenuContent ? (core_1.jsx(MenuContent, null, children)) : (core_1.jsx("div", { css: core_1.css `
+      ` }, MenuContent ? (core_1.jsx(MenuContent, null, children)) : (core_1.jsx("div", { css: core_1.css `
             ${styles_1.style.menu}
             ${core_1.css `
               grid-template-columns: repeat(
                 ${menuItemColumns},
-                ${menuItemWidth}px
+                ${menuItemWidth}
               );
             `}
             ${showTransition &&
             core_1.css `
                 animation: ${styles_1.swipeOut} 0.3s ease forwards;
               `}
-          ` }, children))));
+          `, className: menuClassName, style: menuStyle }, children))));
 };
 //# sourceMappingURL=Menu.js.map

@@ -81,17 +81,11 @@ export const style = {
     padding: 1.25rem;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(4, 120px);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 0.25rem;
     animation: ${swipeIn} 0.3s ease forwards;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);
     border: 1px solid #e4e4e4;
-    &:after {
-      content: "";
-      display: block;
-      height: 1.25rem;
-      width: 100%;
-    }
     label: menu;
   `,
   menuItem: css`

@@ -29,7 +29,9 @@ export const MenuItem = ({
         ${style.menuItem};
         ${isActive && style.menuItemActive}
       `}
-      className={`${menuItemClassName}${isActive && ` ${activeItemClassName}`}`}
+      className={`${menuItemClassName ? menuItemClassName : ""}${
+        isActive ? ` ${activeItemClassName}` : ""
+      }`}
       style={styles}
     >
       <div>{children}</div>

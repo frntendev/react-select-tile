@@ -27,7 +27,7 @@ export interface SelectProps {
   menuItemComponent?: ReactComponent;
   openAnimationDelay?: number;
   menuItemColumns?: number;
-  menuItemWidth?: number;
+  menuItemWidth?: number | string;
   menuPosition?: "bottom" | "top";
   placeholder?: string;
   options: Option[];
@@ -47,7 +47,7 @@ export interface MenuProps {
     | null
     | undefined;
   menuItemColumns?: number;
-  menuItemWidth?: number;
+  menuItemWidth?: number | string;
   menuWidth: number;
   offsetX: number;
   offsetY: number;

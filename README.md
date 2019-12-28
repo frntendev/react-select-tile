@@ -4,7 +4,9 @@ The Select control for [React](https://reactjs.com).
 
 Check demo [here](https://sepehr1313.github.io/react-select-tile.html)
 
-![React Select Tile Demo](http://g.recordit.co/m36nzGszKE.gif)
+Link to [CodeSandBox](https://codesandbox.io/s/react-select-tile-918u4)
+
+![React Select Tile Demo](http://g.recordit.co/CgKLsLh2TH.gif)
 
 # Installation and usage
 

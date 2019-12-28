@@ -33701,7 +33701,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n    max-height: 200px;\n    overflow-y: scroll;\n    background: #f5f5f5;\n    z-index: 999;\n    padding: 1.25rem;\n    box-sizing: border-box;\n    display: grid;\n    grid-template-columns: repeat(4, 120px);\n    grid-gap: 0.25rem;\n    animation: ", " 0.3s ease forwards;\n    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);\n    border: 1px solid #e4e4e4;\n    &:after {\n      content: \"\";\n      display: block;\n      height: 1.25rem;\n      width: 100%;\n    }\n    label: menu;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    max-height: 200px;\n    overflow-y: scroll;\n    background: #f5f5f5;\n    z-index: 999;\n    padding: 1.25rem;\n    box-sizing: border-box;\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    grid-gap: 0.25rem;\n    animation: ", " 0.3s ease forwards;\n    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);\n    border: 1px solid #e4e4e4;\n    label: menu;\n  "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -33901,7 +33901,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n              grid-template-columns: repeat(\n                ", ",\n                ", "px\n              );\n            "]);
+  var data = _taggedTemplateLiteral(["\n              grid-template-columns: repeat(\n                ", ",\n                ", "\n              );\n            "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -33968,11 +33968,11 @@ exports.Menu = function (_ref) {
   var MenuContent = menuComponent;
   return core_1.jsx("div", {
     ref: menuRef,
-    css: core_1.css(_templateObject(), core_1.css(_templateObject2(), menuWidth, menuWidth, offsetX, menuPosition === "bottom" ? "top: calc(".concat(offsetY, "px + 5px)") : "bottom : calc(".concat(window.innerHeight, "px - ").concat(offsetY, "px + ").concat(inputHeight, "px + 5px)"))),
+    css: core_1.css(_templateObject(), core_1.css(_templateObject2(), menuWidth, menuWidth, offsetX, menuPosition === "bottom" ? "top: calc(".concat(offsetY, "px + 5px)") : "bottom : calc(".concat(window.innerHeight, "px - ").concat(offsetY, "px + ").concat(inputHeight, "px + 5px)")))
+  }, MenuContent ? core_1.jsx(MenuContent, null, children) : core_1.jsx("div", {
+    css: core_1.css(_templateObject3(), styles_1.style.menu, core_1.css(_templateObject4(), menuItemColumns, menuItemWidth), showTransition && core_1.css(_templateObject5(), styles_1.swipeOut)),
     className: menuClassName,
     style: menuStyle
-  }, MenuContent ? core_1.jsx(MenuContent, null, children) : core_1.jsx("div", {
-    css: core_1.css(_templateObject3(), styles_1.style.menu, core_1.css(_templateObject4(), menuItemColumns, menuItemWidth), showTransition && core_1.css(_templateObject5(), styles_1.swipeOut))
   }, children));
 };
 },{"@emotion/core":"../../node_modules/@emotion/core/dist/core.browser.esm.js","./styles":"../../src/styles.ts"}],"../../src/Input.tsx":[function(require,module,exports) {
@@ -34055,7 +34055,7 @@ exports.MenuItem = function (_ref) {
       return _onClick && _onClick(value);
     },
     css: core_1.css(_templateObject(), styles_1.style.menuItem, isActive && styles_1.style.menuItemActive),
-    className: "".concat(menuItemClassName).concat(isActive && " ".concat(activeItemClassName)),
+    className: "".concat(menuItemClassName ? menuItemClassName : "").concat(isActive ? " ".concat(activeItemClassName) : ""),
     style: styles
   }, core_1.jsx("div", null, children));
 };
@@ -34557,7 +34557,7 @@ exports.Select = function (_ref) {
       _ref$menuItemColumns = _ref.menuItemColumns,
       menuItemColumns = _ref$menuItemColumns === void 0 ? 4 : _ref$menuItemColumns,
       _ref$menuItemWidth = _ref.menuItemWidth,
-      menuItemWidth = _ref$menuItemWidth === void 0 ? 120 : _ref$menuItemWidth,
+      menuItemWidth = _ref$menuItemWidth === void 0 ? "1fr" : _ref$menuItemWidth,
       _ref$menuPosition = _ref.menuPosition,
       menuPosition = _ref$menuPosition === void 0 ? "bottom" : _ref$menuPosition,
       _ref$placeholder = _ref.placeholder,
@@ -34763,6 +34763,33 @@ var options = [{
 }, {
   value: "vanilla",
   label: "Vanilla"
+}, {
+  value: "avocado",
+  label: "Avocado"
+}, {
+  value: "mandarin",
+  label: "Mandarin"
+}, {
+  value: "cherimoya",
+  label: "Cherimoya"
+}, {
+  value: "pineapple",
+  label: "Pineapple"
+}, {
+  value: "raspberries",
+  label: "Raspberries"
+}, {
+  value: "watermelon",
+  label: "Watermelon"
+}, {
+  value: "rhubarb",
+  label: "Rhubarb"
+}, {
+  value: "quince",
+  label: "Quince"
+}, {
+  value: "pomegranate",
+  label: "Pomegranate"
 }];
 var styles = {
   heading: (0, _core.css)(_templateObject()),
@@ -34779,7 +34806,7 @@ var code = function code() {
   return "<Select placeholder=\"Please select...\"\n    value={this.state.value} ".concat(props.join("\n\t"), "\n    options={").concat(JSON.stringify(options, null, 2), "} />");
 };
 
-var Example = function Example() {
+var App = function App() {
   var _React$useState = React.useState(""),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       value = _React$useState2[0],
@@ -34806,7 +34833,7 @@ var Example = function Example() {
   styles: styles.global
 }), (0, _core.jsx)("div", {
   css: styles.select
-}, (0, _core.jsx)(Example, null)), (0, _core.jsx)("pre", {
+}, (0, _core.jsx)(App, null)), (0, _core.jsx)("pre", {
   className: "prettyprint"
 }, (0, _core.jsx)("code", {
   className: "language-js"
@@ -34839,7 +34866,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56582" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64220" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

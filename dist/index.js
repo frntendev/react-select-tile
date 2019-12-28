@@ -10,7 +10,7 @@ const Menu_1 = require("./Menu");
 const Input_1 = require("./Input");
 const MenuItem_1 = require("./MenuItem");
 const EmptyStatus_1 = require("./EmptyStatus");
-exports.Select = ({ value, onItemClick, onInputChange, onMenuClose, onMenuOpen, menuIsOpen = false, containerClassName, containerStyle, inputClassName, inputStyle, menuClassName, menuStyle, menuItemClassName, menuItemStyle, activeItemClassName, activeItemStyle, menuComponent, emptyComponent, menuItemComponent, openAnimationDelay = 300, menuItemColumns = 4, menuItemWidth = 120, menuPosition = "bottom", placeholder = "", options, iconClassName, iconStyle }) => {
+exports.Select = ({ value, onItemClick, onInputChange, onMenuClose, onMenuOpen, menuIsOpen = false, containerClassName, containerStyle, inputClassName, inputStyle, menuClassName, menuStyle, menuItemClassName, menuItemStyle, activeItemClassName, activeItemStyle, menuComponent, emptyComponent, menuItemComponent, openAnimationDelay = 300, menuItemColumns = 4, menuItemWidth = "1fr", menuPosition = "bottom", placeholder = "", options, iconClassName, iconStyle }) => {
     var _a;
     const [showMenu, setShowMenu] = react_1.useState(menuIsOpen);
     const [showTransition, setShowTransition] = react_1.useState(false);

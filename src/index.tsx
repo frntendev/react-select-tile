@@ -37,7 +37,7 @@ export const Select = ({
   menuItemComponent,
   openAnimationDelay = 300,
   menuItemColumns = 4,
-  menuItemWidth = 120,
+  menuItemWidth = "1fr",
   menuPosition = "bottom",
   placeholder = "",
   options,

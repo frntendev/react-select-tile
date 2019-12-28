@@ -7,7 +7,16 @@ import { jsx, css, Global } from "@emotion/core";
 const options = [
   { value: "chocolate", label: "Chocolate" },
   { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" }
+  { value: "vanilla", label: "Vanilla" },
+  { value: "avocado", label: "Avocado" },
+  { value: "mandarin", label: "Mandarin" },
+  { value: "cherimoya", label: "Cherimoya" },
+  { value: "pineapple", label: "Pineapple" },
+  { value: "raspberries", label: "Raspberries" },
+  { value: "watermelon", label: "Watermelon" },
+  { value: "rhubarb", label: "Rhubarb" },
+  { value: "quince", label: "Quince" },
+  { value: "pomegranate", label: "Pomegranate" }
 ];
 
 const styles = {
@@ -36,7 +45,7 @@ const code = (...props) => `<Select placeholder="Please select..."
     value={this.state.value} ${props.join("\n\t")}
     options={${JSON.stringify(options, null, 2)}} />`;
 
-const Example = () => {
+const App = () => {
   const [value, setValue] = React.useState("");
 
   const handleItemClick = value => {
@@ -60,7 +69,7 @@ render(
     <div css={styles.container}>
       <Global styles={styles.global} />
       <div css={styles.select}>
-        <Example />
+        <App />
       </div>
       <pre className="prettyprint">
         <code className="language-js">{code()}</code>

@@ -9,7 +9,7 @@ exports.MenuItem = ({ onClick, menuItemClassName, menuItemStyle, children, menuI
     return MenuItemContent ? (core_1.jsx(MenuItemContent, null, children)) : (core_1.jsx("div", { onClick: () => onClick && onClick(value), css: core_1.css `
         ${styles_1.style.menuItem};
         ${isActive && styles_1.style.menuItemActive}
-      `, className: `${menuItemClassName}${isActive && ` ${activeItemClassName}`}`, style: styles },
+      `, className: `${menuItemClassName ? menuItemClassName : ""}${isActive ? ` ${activeItemClassName}` : ""}`, style: styles },
         core_1.jsx("div", null, children)));
 };
 //# sourceMappingURL=MenuItem.js.map
